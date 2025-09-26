@@ -64,6 +64,23 @@ class Lista:
                 print ("El elemento ya existe")
             else:
                 return 1
+
+    def BusquedaBinaria(self, dato):
+        '''
+        Realiza búsqueda binaria sobre la lista ordenada.
+        Devuelve el índice si lo encuentra, si no devuelve -1.
+        '''
+        inicio = 0
+        fin = self.__Cantidad - 1
+        while inicio <= fin:
+            medio = (inicio + fin) // 2
+            if self.__Lista[medio] == dato:
+                return medio
+            elif self.__Lista[medio] is not None and self.__Lista[medio] < dato:
+                inicio = medio + 1
+            else:
+                fin = medio - 1
+        return -1
                 
                 
                 
@@ -78,4 +95,7 @@ if __name__ == "__main__":
     l.SuprimirPorContenido (5)
     print ("--------------------------------------------------------------")
     l.Recorrer()
+
     l.BuscarPorContenido (5)
+    print("Búsqueda binaria de 3:", l.BusquedaBinaria(3))
+    print("Búsqueda binaria de 5:", l.BusquedaBinaria(5))
