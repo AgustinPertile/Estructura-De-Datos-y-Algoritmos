@@ -1,0 +1,17 @@
+Ejercicio 2: Reproductor de música (Lista secuencial, lista encadenada)
+
+Objetivo: Administrar una lista de canciones, permitiendo agregar, insertar y eliminar.
+
+Se pide:
+
+a)Agregar una canción al final de la lista
+
+b)Insertar una canción en una posición específica
+
+c)Dada una posición mostrar el título de la canción almacenada en esa posición
+
+d)Dado el nombre de una canción mostrar la posición de la lista en la que se encuentra
+
+e)Dada una posicion eliminar la cancion que en ella se encuetra 
+
+f)Mostrar la lista de reproducción

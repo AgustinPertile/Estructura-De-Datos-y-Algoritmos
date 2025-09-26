@@ -1,0 +1,24 @@
+Ejercicios de listas en Python
+
+Introducción
+
+Las listas son estructuras de datos que permiten almacenar múltiples elementos de forma ordenada. Se dividen principalmente en:
+
+Listas secuenciales (arrays): almacenamiento contiguo en memoria, acceso rápido por índice.
+
+Listas encadenadas: cada nodo apunta al siguiente, lo que permite inserciones y eliminaciones dinámicas.
+
+Ejercicio 1: Agenda de contactos (Lista secuencial, lista encadenada)
+
+Objetivo: Implementar una agenda de contactos utilizando una lista encadenada, de manera que cada uno se guarde ordenado alfabéticamente por nombre, cada contacto tiene nombre y teléfono.
+
+Se pide:
+
+a)Insertar un contacto, debe validar que el contacto no exista en la agenda.
+
+b)Eliminar un contacto.
+
+c)Dar el nombre de un contacto, mostrar su número de teléfono.
+
+d)Mostrar la lista de contactos
+
