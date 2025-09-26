@@ -76,6 +76,32 @@ class ListaEnlazada:
 		print("No se encontró el elemento")
 		return False
 
+
+	def BusquedaBinaria(self, dato):
+		'''
+		Realiza búsqueda binaria sobre la lista enlazada ordenada.
+		Devuelve la posición (1-based) si lo encuentra, si no devuelve -1.
+		'''
+		inicio = 0
+		fin = self.__cantidad - 1
+		while inicio <= fin:
+			medio = (inicio + fin) // 2
+			actual = self.__cabeza
+			idx = 0
+			# Avanzar hasta el nodo en la posición 'medio'
+			while idx < medio and actual is not None:
+				actual = actual.get_siguiente()
+				idx += 1
+			if actual is None:
+				break
+			if actual.get_dato() == dato:
+				return medio + 1  # posición 1-based
+			elif actual.get_dato() < dato:
+				inicio = medio + 1
+			else:
+				fin = medio - 1
+		return -1
+
 	def Recorrer(self):
 		actual = self.__cabeza
 		while actual is not None:
@@ -88,4 +114,9 @@ if __name__=="__main__":
 	l.InsertarPorContenido(2)
 	l.InsertarPorContenido(4)
 	l.InsertarPorContenido(3)
+
 	l.Recorrer()
+	
+	l.BuscarPorContenido(5)
+	print("Búsqueda binaria de 3:", l.BusquedaBinaria(3))
+	print("Búsqueda binaria de 5:", l.BusquedaBinaria(5))
