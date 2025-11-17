@@ -16,8 +16,20 @@ class Hash:
         self.__tabla=np.full((self.__areaPrimaria+self.__overflow, colisiones), None)
         self.__arregloSecundario=np.zeros(self.__areaPrimaria+self.__overflow, dtype=int)
         
-    def hash(self, clave):
-        return clave % self.__areaPrimaria
+    def hash(self, clave):#funcion has mudulo(division)
+        return clave%self.__dimension
+
+    def hash(self, clave):#funcion hash Cuadrado Medio
+        pos=clave*clave
+        strpos=str(pos)
+        cuadradoMedio=int(strpos[-2:])
+        return cuadradoMedio%self.__dimension
+
+    def hash(self, clave):#funcion hash extraccion
+        pos=clave
+        strpos=str(pos)
+        extraccion=int(strpos[-2:])
+        return extraccion%self.__dimension
     
     def insertar(self, clave):
         pos=self.hash(clave)
