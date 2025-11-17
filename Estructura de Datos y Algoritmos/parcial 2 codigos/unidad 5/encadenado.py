@@ -30,8 +30,20 @@ class Arreglo:
         self.__Arreglo = np.empty(self.__Dimension, dtype=object)
         
         
-    def __hash (self, dato):
-        return dato % self.__Dimension
+    def hash(self, clave):#funcion has mudulo(division)
+        return clave%self.__dimension
+
+    def hash(self, clave):#funcion hash Cuadrado Medio
+        pos=clave*clave
+        strpos=str(pos)
+        cuadradoMedio=int(strpos[-2:])
+        return cuadradoMedio%self.__dimension
+
+    def hash(self, clave):#funcion hash extraccion
+        pos=clave
+        strpos=str(pos)
+        extraccion=int(strpos[-2:])
+        return extraccion%self.__dimension
     
     
     def Primo (self, n):
@@ -114,4 +126,5 @@ if __name__ == "__main__":
     print ("--------------------------------------")
     a.Buscar(25)
     
+
     
