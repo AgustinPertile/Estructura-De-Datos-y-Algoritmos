@@ -24,6 +24,20 @@ class Hash():
         while not self.Primo(n):
             n += 1
         return n
+    def hash(self, clave):
+        return clave%self.__dimension
+
+    def hash(self, clave):#funcion hash Cuadrado Medio
+        pos=clave*clave
+        strpos=str(pos)
+        cuadradoMedio=int(strpos[-2:])
+        return cuadradoMedio%self.__dimension
+
+    def hash(self, clave):#funcion hash extraccion
+        pos=clave
+        strpos=str(pos)
+        extraccion=int(strpos[-2:])
+        return extraccion%self.__dimension
     
     def insertar(self, clave):
         pos=self.hash(clave)
@@ -126,4 +140,5 @@ if __name__ == "__main__":
             
             
         
+
         
