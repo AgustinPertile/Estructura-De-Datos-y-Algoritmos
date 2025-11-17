@@ -24,7 +24,7 @@ class Hash():
         while not self.Primo(n):
             n += 1
         return n
-    def hash(self, clave):
+    def hash(self, clave):#funcion has mudulo(division)
         return clave%self.__dimension
 
     def hash(self, clave):#funcion hash Cuadrado Medio
@@ -142,3 +142,4 @@ if __name__ == "__main__":
         
 
         
+
