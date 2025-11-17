@@ -20,38 +20,6 @@ class Hash:
         return clave % self.__areaPrimaria
     
     def insertar(self, clave):
-        '''pos = self.hash(clave)
-        # intentar insertar en el área primaria (fila 'pos')
-        
-        cols = self.__tabla.shape[1]#.shape[1] devuelve el número de columnas (n).
-        
-        for j in range(cols):
-            if self.__tabla[pos, j] is None:
-                # insertar en primaria y aumentar contador de colisiones para la cubeta
-                self.__tabla[pos, j] = clave
-                if 0 <= pos < len(self.__arregloSecundario):
-                    self.__arregloSecundario[pos] += 1
-                return
-            if self.__tabla[pos, j] == clave:
-                print(f"El elemento {clave} ya existe en la tabla (primaria)")
-                return
-
-        # si la fila primaria está llena, usar la zona de overflow
-        
-        filas = self.__tabla.shape[0]#.shape[0] devuelve el número de filas (m) de la tabla.
-        
-        # primaria está llena: solo usar overflow si el contador de colisiones alcanzó el máximo
-        for r in range(self.__comienzoOverflow, filas):
-            for j in range(cols):
-                if self.__tabla[r, j] is None:
-                    self.__tabla[r, j] = clave
-                    return
-                if self.__tabla[r, j] == clave:
-                    print(f"El elemento {clave} ya existe en la tabla (overflow)")
-                    return
-
-        print("La tabla está llena, no hay espacio para insertar")'''
-        
         pos=self.hash(clave)
         if self.__arregloSecundario[pos]<self.__colisiones:
             self.__tabla[pos, self.__arregloSecundario[pos]]=clave
